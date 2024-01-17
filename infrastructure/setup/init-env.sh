@@ -3,10 +3,10 @@
 # eg. declare moduleName="learn-aks-deploy-helm"
 
 # Common Declarations
-declare scriptPath=https://raw.githubusercontent.com/$gitUser/mslearn-aks/$gitBranch/infrastructure/scripts
+declare scriptPath=https://raw.githubusercontent.com/$gitUser/mslearn-aks-test/$gitBranch/infrastructure/scripts
 declare dotnetScriptsPath=$scriptPath/dotnet
 declare gitDirectoriesToClone="infrastructure/deploy/ modules/$moduleName/src/"
-declare gitPathToCloneScript=https://raw.githubusercontent.com/$gitUser/mslearn-aks/$gitBranch/infrastructure/setup/sparsecheckout.sh
+declare gitPathToCloneScript=https://raw.githubusercontent.com/$gitUser/mslearn-aks-test/$gitBranch/infrastructure/setup/sparsecheckout.sh
 
 if ! [ $rootLocation ]; then
     declare rootLocation=~
