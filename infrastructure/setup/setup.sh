@@ -47,23 +47,23 @@ declare -x dotnetSdkVersion="3.1.302"
 
 # Module name
 if [ -z "$moduleName" ]; then
-    declare moduleName="mslearn-aks"
+    declare moduleName="mslearn-aks-test"
 fi
 
 # Any other declarations we need
-declare -x gitUser="MicrosoftDocs"
+declare -x gitUser="schaffererin"
 declare -x gitBranch="main"
-declare initScript=https://raw.githubusercontent.com/$gitUser/mslearn-aks/$gitBranch/infrastructure/setup/init-env.sh
+declare initScript=https://raw.githubusercontent.com/$gitUser/mslearn-aks-test/$gitBranch/infrastructure/setup/init-env.sh
 declare suppressAzureResources=false
 declare rootLocation=~/clouddrive
-declare editorHomeLocation=$rootLocation/mslearn-aks
+declare editorHomeLocation=$rootLocation/mslearn-aks-test
 
-if [ -d "$rootLocation/mslearn-aks" ]; then
-    echo "$rootLocation/mslearn-aks/ already exists!"
+if [ -d "$rootLocation/mslearn-aks-test" ]; then
+    echo "$rootLocation/mslearn-aks-test/ already exists!"
     echo " "
-    echo "Before running this script, please remove or rename the existing $rootLocation/mslearn-aks/ directory as follows:"
-    echo "Remove: rm -r $rootLocation/mslearn-aks/"
-    echo "Rename: mv $rootLocation/mslearn-aks/ ~/clouddrive/new-name-here/"
+    echo "Before running this script, please remove or rename the existing $rootLocation/mslearn-aks-test/ directory as follows:"
+    echo "Remove: rm -r $rootLocation/mslearn-aks-test/"
+    echo "Rename: mv $rootLocation/mslearn-aks-test/ ~/clouddrive/new-name-here/"
     echo " "
     return 1
 else
@@ -83,7 +83,7 @@ else
     # Set location to ~/clouddrive
     cd $editorHomeLocation
 
-    # Run mslearn-aks quickstart to deploy to AKS
+    # Run mslearn-aks-test quickstart to deploy to AKS
     $editorHomeLocation/infrastructure/deploy/k8s/quickstart.sh --subscription $clusterSubs --resource-group $resourceGroupName -n $moduleName --location westus2
 
     # Create ACR resource
@@ -98,13 +98,13 @@ else
     # Display information to use
     echo "Azure Container Registry Information"
     echo "=================================================================================="
-    cat ~/clouddrive/mslearn-aks/create-acr-exports.txt
+    cat ~/clouddrive/mslearn-aks-test/create-acr-exports.txt
     echo "=================================================================================="
     echo 
     echo
     echo "Azure Container Kubernetes Cluster Information"
     echo "=================================================================================="
-    cat ~/clouddrive/mslearn-aks/create-aks-exports.txt
+    cat ~/clouddrive/mslearn-aks-test/create-aks-exports.txt
     echo "=================================================================================="
 fi
 
