@@ -7,7 +7,7 @@
 # constants
 declare gitUser="schaffererin"
 
-DIR="mslearn-aks"
+DIR="mslearn-aks-test"
 REPOS="https://github.com/$gitUser/mslearn-aks-test"
 BRANCH=$gitBranch
 
