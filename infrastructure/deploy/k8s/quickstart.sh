@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Color theming
-if [ -f ~/clouddrive/learn-aks/infrastructure/deploy/theme.sh ]
+if [ -f ~/clouddrive/learn-aks-test/infrastructure/deploy/theme.sh ]
 then
-  . <(cat ~/clouddrive/learn-aks/infrastructure/deploy/theme.sh)
+  . <(cat ~/clouddrive/learn-aks-test/infrastructure/deploy/theme.sh)
 fi
 
 
@@ -216,8 +216,8 @@ fi
 if [ -z "$LEARN_QUICKSTART" ]
 then
     echo "Run the following command to update the environment"
-    echo 'eval $(cat ~/clouddrive/mslearn-aks/create-aks-exports.txt)'
+    echo 'eval $(cat ~/clouddrive/mslearn-aks-test/create-aks-exports.txt)'
     echo
 fi
 
-mv -f create-aks-exports.txt ~/clouddrive/mslearn-aks/
+mv -f create-aks-exports.txt ~/clouddrive/mslearn-aks-test/
